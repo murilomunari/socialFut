@@ -1,8 +1,10 @@
 import { useState } from "react"
 import { Input } from "../../components/inputs"
+import { useNavigate } from "react-router-dom";
 
 export function Login() {
 
+    const navigate = useNavigate();
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
@@ -13,6 +15,7 @@ export function Login() {
             alert('Por favor, preencha todos os campos.');
             return;
         }
+        navigate('/teams');
     }
 
     return (
@@ -44,7 +47,7 @@ export function Login() {
                     type="submit" 
                     className="bg-blue-600 text-white p-2 rounded shadow hover:bg-blue-700 transition"
                 >
-                    acessar
+                    Entrar
                 </button>
             </form>
 

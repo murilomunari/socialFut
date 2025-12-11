@@ -1,12 +1,13 @@
-import { createBrowserRouter } from "react-router-dom";
-import { Home } from "./pages/home";
+import { createBrowserRouter, Navigate } from "react-router-dom";
 import { Login } from "./pages/login";
 import { SelectTeam } from "./pages/teams";
+import { NewsPage } from "./pages/news";
+import { Feed } from "./pages/feed";
 
 const router = createBrowserRouter([
     {
       path: "/",
-      element: <Home />,
+      element: <Navigate to="/login" replace />
     },
     {
       path: "/login",
@@ -15,8 +16,15 @@ const router = createBrowserRouter([
     {
       path: "/teams",
       element: <SelectTeam />,
+    },
+    {
+      path: "/news",
+      element: <NewsPage />,
+    },
+    {
+      path: "/feed",
+      element: <Feed />,
     }
-        
 ])
 
-export {router}
+export { router };
